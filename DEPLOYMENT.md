@@ -34,6 +34,39 @@
 
 部署完成后会得到一个公开 URL，可以直接发给领导。
 
+### 3. 如果一直卡在 Loading / Installing
+
+这通常不是本机没有 `pip`。Streamlit Cloud 会在云端自动执行类似：
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+优先检查这几项：
+
+1. 确认部署的是新项目
+   - 推荐：把 `asti-media-demo/` 单独作为 GitHub repo。
+   - Streamlit Cloud 里 Main file path 填：`app.py`
+
+2. 如果部署的是大仓库子目录
+   - Main file path 填：`asti-media-demo/app.py`
+   - 代码已兼容从大仓库根目录启动，避免 `No module named 'engine'`。
+   - 如果云端提示找不到 `plotly`、`pandas`、`sklearn`，说明没有读到依赖文件；最稳妥做法是把 `asti-media-demo` 作为单独 repo 部署，或在大仓库根目录也放一份同样的 `requirements.txt`。
+
+3. 确认这些文件已经提交并 push 到 GitHub
+   - `app.py`
+   - `requirements.txt`
+   - `runtime.txt`
+   - `.streamlit/config.toml`
+   - `engine/`
+   - `data/.gitkeep`
+
+4. 看 Streamlit Cloud 日志
+   - `ModuleNotFoundError: No module named 'engine'`：入口目录问题，拉取最新代码后重新部署。
+   - `ModuleNotFoundError: No module named 'plotly'`：依赖文件没被云端读取。
+   - 长时间停在 installing：通常是依赖下载慢，等待几分钟或点击 Reboot / Redeploy。
+
 ## 临时分享方式：本地运行 + 隧道
 
 适合当天临时演示，不需要先建云部署。
