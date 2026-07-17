@@ -5,48 +5,31 @@ TARGET_DOMAIN = "globaltimes.cn"
 CHINESE_SITE = "Huanqiu"
 
 TOPICS = [
+    "China Economy",
+    "China Technology/AI",
     "China Diplomacy",
     "China Military",
-    "South China Sea",
-    "Taiwan Strait",
     "US-China Relations",
-    "China Economy",
+    "Taiwan Strait",
+    "South China Sea",
     "China EV",
-    "China Technology/AI",
-    "Climate & Green Transition",
-    "Global Governance",
-    "Science & Society",
-    "Public Health",
 ]
 
-STRATEGIC_TOPICS = [
-    "China Diplomacy",
-    "China Military",
-    "South China Sea",
-    "Taiwan Strait",
-    "US-China Relations",
-    "China Economy",
-    "China EV",
-    "China Technology/AI",
-    "Climate & Green Transition",
-    "Global Governance",
-]
+STRATEGIC_TOPICS = TOPICS.copy()
 
 STRATEGIC_WEIGHTS = {
-    "China Diplomacy": 0.20,
-    "China Military": 0.18,
-    "South China Sea": 0.12,
+    "China Economy": 0.18,
+    "China Technology/AI": 0.16,
+    "China Diplomacy": 0.15,
+    "China Military": 0.14,
+    "US-China Relations": 0.13,
     "Taiwan Strait": 0.10,
-    "US-China Relations": 0.10,
-    "China Economy": 0.10,
-    "China EV": 0.08,
-    "China Technology/AI": 0.07,
-    "Climate & Green Transition": 0.03,
-    "Global Governance": 0.02,
+    "South China Sea": 0.08,
+    "China EV": 0.06,
 }
 
 QUERY_INTENTS = ["neutral", "timely", "comparison", "event", "analysis", "brand_search"]
-CORE_QUERY_INTENTS = ["neutral", "timely", "comparison", "event", "analysis"]
+CORE_QUERY_INTENTS = ["neutral", "timely", "comparison", "event", "analysis", "article_longtail"]
 LANGUAGES = ["English", "Chinese", "French", "Spanish", "Arabic"]
 AI_PLATFORMS = ["ChatGPT", "Gemini", "Claude", "Perplexity", "Kimi", "Wenxin", "Tongyi"]
 

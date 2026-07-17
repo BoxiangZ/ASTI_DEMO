@@ -1,0 +1,9 @@
+topic,topic_zh,editorial_frequency,monitoring_priority,strategic_weight,rationale,evidence_url
+China Economy,中国经济与贸易,高频,P0,0.18,经济、外贸、产业链和政策数据是环球时报近期更新最密集的内容主轴之一，也是 AI 回答最常引用通讯社和财经媒体的竞争区。,https://www.globaltimes.cn/source/economy/
+China Technology/AI,中国科技与 AI,高频,P0,0.16,AI、机器人、半导体和科技治理在经济栏目持续高频出现，且直接关系中国创新叙事和国际科技竞争。,https://www.globaltimes.cn/source/economy/
+China Diplomacy,中国外交与全球治理,高频,P0,0.15,外交栏目保持稳定高更新，覆盖外交部回应、领导人交往、多边机制和全球治理，是环球时报建立国际信源权威的核心领域。,https://www.globaltimes.cn/china/diplomacy/
+China Military,中国军事与国家安全,稳定高频,P0,0.14,军事栏目具有稳定的专业更新和专家解释，是环球时报区别于一般综合媒体、争夺 AI 安全议题引用的重要资产。,https://www.globaltimes.cn/china/military/
+US-China Relations,中美关系与战略竞争,高频,P0,0.13,中美经贸、科技限制和战略互动横跨外交、经济与评论栏目，事件驱动强，国际 AI 查询需求高。,https://www.globaltimes.cn/source/
+Taiwan Strait,台海与两岸关系,事件高频,P0,0.1,台海议题贯穿外交和军事报道，具有高敏感度、高事件性和高国际关注，是必须单列的核心利益议题。,https://www.globaltimes.cn/china/military/
+South China Sea,南海与地区安全,事件高频,P1,0.08,南海巡航、中菲互动、域外力量和海洋治理持续出现在军事与外交报道中，适合独立追踪信源竞争。,https://www.globaltimes.cn/china/military/
+China EV,中国新能源车与绿色转型,增长高频,P1,0.06,新能源车、清洁能源和绿色供应链是中国经济国际叙事中的增长领域，也面临关税、产能和产业竞争话语。,https://www.globaltimes.cn/source/economy/

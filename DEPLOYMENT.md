@@ -1,139 +1,52 @@
-# ASTI Media Intelligence Demo Deployment
+# ASTI 部署说明
 
-这份说明用于把本地 Streamlit Demo 变成可分享链接。
-
-## 推荐方式：Streamlit Community Cloud
-
-适合给领导、客户或内部同事看一个稳定链接。
-
-### 1. 准备 GitHub 仓库
-
-把 `asti-media-demo/` 作为一个 GitHub repo 上传，或放到现有 repo 的子目录。
-
-需要保留这些文件：
-
-- `app.py`
-- `requirements.txt`
-- `runtime.txt`
-- `.streamlit/config.toml`
-- `engine/`
-- `assets/`
-- `data/.gitkeep`
-
-不需要提交生成后的 CSV。线上首次打开时会自动生成 Mock Demo Data。
-
-### 2. 部署到 Streamlit Cloud
-
-1. 打开 https://share.streamlit.io/
-2. 选择 GitHub repo。
-3. 如果 `asti-media-demo` 是 repo 根目录：
-   - Main file path: `app.py`
-4. 如果它在大 repo 子目录：
-   - Main file path: `asti-media-demo/app.py`
-5. 点击 Deploy。
-
-部署完成后会得到一个公开 URL，可以直接发给领导。
-
-### 3. 如果一直卡在 Loading / Installing
-
-这通常不是本机没有 `pip`。Streamlit Cloud 会在云端自动执行类似：
-
-```bash
-pip install -r requirements.txt
-streamlit run app.py
-```
-
-优先检查这几项：
-
-1. 确认部署的是新项目
-   - 推荐：把 `asti-media-demo/` 单独作为 GitHub repo。
-   - Streamlit Cloud 里 Main file path 填：`app.py`
-
-2. 如果部署的是大仓库子目录
-   - Main file path 填：`asti-media-demo/app.py`
-   - 代码已兼容从大仓库根目录启动，避免 `No module named 'engine'`。
-   - 如果云端提示找不到 `plotly`、`pandas`、`sklearn`，说明没有读到依赖文件；最稳妥做法是把 `asti-media-demo` 作为单独 repo 部署，或在大仓库根目录也放一份同样的 `requirements.txt`。
-
-3. 确认这些文件已经提交并 push 到 GitHub
-   - `app.py`
-   - `requirements.txt`
-   - `runtime.txt`
-   - `.streamlit/config.toml`
-   - `engine/`
-   - `data/.gitkeep`
-
-4. 看 Streamlit Cloud 日志
-   - `ModuleNotFoundError: No module named 'engine'`：入口目录问题，拉取最新代码后重新部署。
-   - `ModuleNotFoundError: No module named 'plotly'`：依赖文件没被云端读取。
-   - 长时间停在 installing：通常是依赖下载慢，等待几分钟或点击 Reboot / Redeploy。
-
-## 临时分享方式：本地运行 + 隧道
-
-适合当天临时演示，不需要先建云部署。
-
-### 1. 本地启动
+## 本地运行
 
 ```bash
 cd asti-media-demo
+source .venv/bin/activate
 pip install -r requirements.txt
-streamlit run app.py --server.address 0.0.0.0 --server.port 8501
+streamlit run app.py --server.address 0.0.0.0 --server.port 8510
 ```
 
-### 2. 用 ngrok 暴露链接
+浏览器打开 `http://localhost:8510`。
+
+## Streamlit Community Cloud
+
+1. 将项目推送到私有 GitHub 仓库。
+2. 打开 `https://share.streamlit.io/`。
+3. 选择仓库和 `app.py`。
+4. 在 Secrets 中配置 API：
+
+```toml
+ASTI_PROVIDER = "chatgpt"
+CHATGPT_API_KEY = "your-key"
+CHATGPT_MODEL = "openai/gpt-5.4-mini"
+CHATGPT_BASE_URL = "https://your-chatgpt-compatible-endpoint/v1"
+ASTI_SEARCH_CONTEXT_SIZE = "high"
+ASTI_TEMPERATURE = "0.2"
+ASTI_MAX_COMPLETION_TOKENS = "2500"
+```
+
+页面可以在 Cloud 上查看和测试单条采集，但 Streamlit Community Cloud 的本地磁盘不是可靠的长期存储，不能依赖它每天后台运行 80 条监测。
+
+## 推荐的持续监测方式
+
+真实持续监测建议在固定 Mac 或服务器运行：
 
 ```bash
-ngrok http 8501
+./scripts/install_daily_schedule.sh
 ```
 
-复制 ngrok 生成的 `https://...ngrok-free.app` 链接给领导。
+每天采集结果保存在 `database/real_monitor.db`，页面读取同一个数据库展示趋势。
 
-### 3. 或用 cloudflared
+如果需要给外部品牌方查看，可在固定机器启动 Streamlit 后使用 Cloudflare Tunnel、内网穿透或部署到持久化服务器。分享前应确认数据库中的 Prompt、回答和引用证据可以对外公开。
 
-```bash
-cloudflared tunnel --url http://localhost:8501
-```
+## 上线检查
 
-复制输出的 `https://...trycloudflare.com` 链接。
-
-## 私有部署方式
-
-如果不希望公开到 Streamlit Community Cloud，可以部署到：
-
-- Render
-- Railway
-- Fly.io
-- 公司内部服务器
-- 一台云主机上的 Docker / systemd 服务
-
-启动命令：
-
-```bash
-streamlit run app.py --server.address 0.0.0.0 --server.port $PORT
-```
-
-## 当前数据模式
-
-当前 Demo 默认使用 `Mock Demo Data`。
-
-页面中已经预留 Real Data Mode：
-
-- Tavily
-- GDELT
-- Gemini API
-
-未配置 API Key 时，系统保持 Mock 模式，适合演示产品逻辑。
-
-## 部署前检查
-
-```bash
-python -m compileall app.py engine
-streamlit run app.py
-```
-
-打开页面后重点检查：
-
-- 首页是否显示 Mock Demo Data banner
-- ASTI 分数拆解是否正常
-- 信源竞争漏斗是否正常
-- 深度归因案例是否能打开
-- 行动建议表是否包含 Topic / 问题 / 优先级 / 具体行动 / 预期提升指标
+- 页面顶部显示“真实数据运行中”或“等待首次采集”
+- 监测矩阵显示 8 个 Topic、80 个问题
+- 页面中没有 Mock、模拟数据或第三方网关品牌入口
+- API Key 只存在于 `.env` 或 Streamlit Secrets
+- `database/real_monitor.db` 已备份
+- 每日任务日志 `/tmp/asti-daily-monitor.log` 无连续错误

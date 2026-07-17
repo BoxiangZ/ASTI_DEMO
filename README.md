@@ -1,111 +1,167 @@
-# ASTI Media Intelligence Demo
+# ASTI 环球时报 AI 信源表现报告
 
-中文名：AI信源权威分析系统 Demo
+ASTI（AI Source Trust Index）每天使用固定问题观察联网 AI 是否发现、引用并优先选择环球时报英文站作为可信信源。当前版本不再输出难以解释的 ASTI 总分，而是直接报告可核验的媒体表现指标。
 
-ASTI means AI Source Trust Intelligence / AI Source Trust Index. This local demo shows how a GenTrack-style AI visibility monitor can evolve into a media-specific source intelligence system.
+系统只使用真实 API 回答、真实引用 URL 和实际抓取的文章正文，不包含模拟排名、模拟回答或 Mock 数据。无法取得正文的引用仍计入“AI 引用覆盖率”和“Top3 率”，但不会进入“内容证据覆盖率”和“全文支持度”。
 
-## What ASTI Measures
+## 报告指标与排序
 
-Traditional PV/UV analytics measure direct visits. In AI search, users often receive an AI-generated answer without clicking the original article. For news media, influence increasingly depends on whether AI systems discover, cite, trust, and prioritize a publisher as a source.
+- AI 引用覆盖率：媒体出现在任意引用位置的成功回答数 / 全部成功回答数。一个回答返回 10 条 reference 时，系统会按原顺序保存全部唯一 URL；GT 即使位于第 10 条，也计入 GT AI 覆盖。
+- Top3 率：媒体位于引用位置 1–3 的成功回答数 / 全部成功回答数。位置 4 以后只计覆盖、不计 Top3；Top3 代表 AI 是否优先使用该媒体，是报告排序的第一优先指标。
+- 内容证据覆盖率：媒体被引用且成功取得文章正文的回答数 / 全部成功回答数。它同时反映文章被引用的数量和正文可核验程度。
+- 全文支持度：只对成功取得正文的引用，比较文章内容对 AI 回答的支持程度。
 
-ASTI answers questions such as:
+媒体排名不展示综合分，而是按四项可见指标综合排列：Top3 率 50%、AI 引用覆盖率 25%、内容证据覆盖率 20%、全文支持度 5%。Top3 最重要，但正文引用数量和内容支持也会实际影响名次。所有媒体使用相同的全量回答分母；页面直接显示 `n / N`，不会把 5 个问题换算成满置信度。
 
-- Does AI find this media source?
-- Does AI choose it for neutral and strategic questions?
-- Does it beat Reuters, Xinhua, China Daily, SCMP, and other competitors in answer position?
-- Which topics show authority, and which topics show absence loss?
-- In high-value cases, does the AI answer borrow facts, data, and narrative framing from this media source?
+## 监测 Topic
 
-## Relationship With GenTrack
+根据环球时报近期公开栏目和报道结构，监测 8 个高频且具有战略价值的领域：
 
-GenTrack monitors AI/GEO visibility for brands:
+1. 中国经济与贸易
+2. 中国科技与 AI
+3. 中国外交与全球治理
+4. 中国军事与国家安全
+5. 中美关系与战略竞争
+6. 台海与两岸关系
+7. 南海与地区安全
+8. 中国新能源车与绿色转型
 
-- Whether AI mentions a brand.
-- Which prompts trigger brand visibility.
-- Brand share of voice against competitors.
-- Position, frequency, and trend in AI answers.
+系统每天抓取环球时报 7 个公开栏目，保存近期文章全文、发布日期、栏目、内容哈希和分类命中词。Topic 权重快照使用“近期发稿量 55% + 可验证第一手报道信号 20% + 战略重要性 25%”计算，并归一化为 100%。第一手信号要求正文出现记者采访、获知或现场观察等明确表述，不把通用站点署名直接当作原创。权重采用多标签计数，一篇跨领域文章可同时进入多个 Topic。
 
-ASTI extends that workflow for news media. It does not stop at "AI mentioned Global Times." It separates brand-search visibility from organic source preference, identifies meaningful source competition, and adds topic authority plus deep attribution.
+每个 Topic 10 个自然问题，共 80 个 Prompt。问题矩阵包含稳定通用问题和近期文章长尾问题。长尾生成器先从全文语料识别连续报道事件簇、具体型号、首发/试验/现场/独家信息，再抽取核心事实生成自然问题；问题不出现媒体品牌名、不复制原标题，并保留种子及关联文章 URL 供事后核验。
 
-## Demo Workflow
+## 报告结构
 
-The dashboard presents five layers:
+页面按一场约 30 分钟的客户汇报组织为四章：
 
-1. Prompt Matrix
-2. AI Visibility Layer
-3. Source Competition Layer
-4. Deep Attribution Layer
-5. ASTI Scores and Recommendations
+- 核心结论：全量样本、环球时报三层表现、八大领域、媒体对标和趋势
+- 分领域诊断：逐领域查看引用覆盖、Top3、内容证据、主要竞品差距和提升方案
+- 证据与样本：按需切换逐题回答、全部引用、文章全文核验、官网语料和长尾问题
+- 方法与数据：解释统一分母、三层判断、问题矩阵和采集批次
 
-## Run Locally
+全文核验分两层：先用 TF-IDF 将 AI 回答逐句与文章全文检索匹配，再对环球时报有效引用调用模型执行 claim-level 审计，列出被支持、未获支持和矛盾的主张。它衡量“该文章是否支持这段回答”，不代表对现实世界全部事实的独立认证。
 
-Use Python 3.11+.
+Topic 竞品方案使用该领域累计的全部成功回答，不按问题去重，也不只保留最新一次。固定问题池用于保证每日监测口径一致；每天新增的回答都会成为新的分析样本。系统按 Top3 覆盖和平均引用位置识别主要领先信源，同时展示 Top 5 竞品矩阵，对比覆盖、引用位置、全文匹配、正文长度、数字证据、直接引语和来源归因密度。对于每一个未赢回答，系统都会列出竞品胜出 URL、支持 AI 回答的原文片段、竞品页面做法、环球应建设的页面类型、必备字段和连续复测 KPI；每个 Topic 另有专属内容资产和 30/60/90 天路线图，可直接下载 CSV。这些结构指标用于解释 AI 取源差异，不被当作事实质量结论。
+
+## 本地运行
+
+Python 3.11：
 
 ```bash
 cd asti-media-demo
+python3.11 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
+cp .env.example .env
 streamlit run app.py
 ```
 
-## Share Online
+项目也支持复用相邻 `asti-demo/.venv`。
 
-The demo is ready for Streamlit Community Cloud deployment. See [DEPLOYMENT.md](DEPLOYMENT.md).
+## ChatGPT 配置
 
-Quick path:
+使用团队提供的 ChatGPT 兼容接口：
 
-1. Push this folder to GitHub.
-2. Open https://share.streamlit.io/.
-3. Select the repo.
-4. Set main file path to `app.py` if this folder is repo root, or `asti-media-demo/app.py` if it is a subdirectory.
-5. Deploy and share the generated URL.
+```text
+ASTI_PROVIDER=chatgpt
+CHATGPT_API_KEY=your-key
+CHATGPT_MODEL=openai/gpt-5.4-mini
+CHATGPT_BASE_URL=https://your-chatgpt-compatible-endpoint/v1
+ASTI_SEARCH_CONTEXT_SIZE=high
+ASTI_TEMPERATURE=0.2
+ASTI_MAX_COMPLETION_TOKENS=2500
+```
 
-On first run, the app automatically creates simulated CSV data in `data/`:
+`.env` 不会提交到 Git，API Key 也不会写入 SQLite。
 
-- `prompts.csv`
-- `media.csv`
-- `simulated_answers.csv`
-- `source_records.csv`
-- `competition_cases.csv`
-- `deep_attribution_cases.csv`
-- `asti_scores.csv`
-- `topic_authority.csv`
-- `recommendations.csv`
+采集侧默认使用较长回答和 high 搜索上下文，目的是保留更多真实引用。`ASTI_TEMPERATURE` 越低，复测结果越稳定；`ASTI_SEED` 可选，只有在网关和模型支持时才会生效。
 
-## Dashboard Pages
+## 运行真实采集
 
-- Executive Overview: Mock Demo Data mode banner, Real Data Mode placeholders, Overall ASTI formula, score contribution breakdown, Strategic ASTI explanation, media ranking, and core benchmarks.
-- AI Visibility: total prompts, citations, source counts, Global Times coverage, brand-search inflation, platform and language breakdowns.
-- Source Competition: effective competition funnel, win rates, head-to-head, position gap, absence loss, and topic x competitor heatmap.
-- Topic Authority: four-level authority status, coverage, source preference, citation quality, attribution score, strategic weights, and topic contribution.
-- Deep Attribution Cases: 30-50 high-value cases with selection reason, prompt, answer summary, source summaries, radar chart, loss reason, and recommendation.
-- Recommendations: executable topic-level tasks with issue, priority, action, and expected metric lift.
+测试 1 条：
 
-## Important Demo Logic
+```bash
+python -m engine.real_collector collect --limit 1
+```
 
-The simulated data intentionally shows these patterns:
+对同一批问题做 3 次复测，适合验证长尾问题的引用稳定性：
 
-- Brand search inflates Global Times visibility.
-- Global Times English site is stronger than Huanqiu in multilingual AI answers.
-- Global Times performs better in China Military, China Diplomacy, South China Sea, and Taiwan Strait.
-- Global Times is weaker in China Technology/AI, Science & Society, and specialist domains.
-- Reuters is strong across international, economic, timely, and technology queries.
-- Xinhua, China Daily, and CGTN are direct competitors on China-related topics.
-- Absence Loss highlights topics where competitors enter Top3 while Global Times is missing.
-- Deep Attribution explains why losses happen, such as weaker data density, freshness, structure, or international-reader framing.
+```bash
+python -m engine.real_collector collect --prompt-ids 18,38 --repeats 3 --delay 1
+```
 
-## Demo Limitations
+完整一轮 80 条：
 
-This is a local MVP demo. All data is simulated. It does not call real AI APIs and does not parse real articles.
+```bash
+./scripts/collect_daily.sh
+```
 
-## Next Steps for a Real Product
+查看状态或问题矩阵：
 
-A production ASTI system would connect:
+```bash
+python -m engine.real_collector status
+python -m engine.real_collector prompts
+```
 
-- OpenAI / Gemini / Claude / Perplexity APIs
-- Web citation fetching
-- Real article parsing
-- Embedding similarity
-- LLM-based source attribution
-- Longitudinal monitoring
-- Client-specific strategic topic weights
-- Report export to PDF / HTML
+真实回答、引用、原始 JSON、模型和采集时间保存在 `database/real_monitor.db`。
+
+手工刷新官网语料和权重：
+
+```bash
+python -m engine.gt_corpus --days 21 --max-articles 700
+python -m engine.prompt_research --days 21 --per-topic 4
+python -m engine.content_audit --latest
+python -m engine.deep_assessment --media "Global Times"
+```
+
+## 每日自动监测
+
+macOS 无需 Homebrew。安装每天上午 9 点运行的 LaunchAgent：
+
+```bash
+./scripts/install_daily_schedule.sh
+```
+
+卸载：
+
+```bash
+./scripts/uninstall_daily_schedule.sh
+```
+
+日志位于 `/tmp/asti-daily-monitor.log`。完整一轮会产生 80 次 API 请求，安装前应确认额度。电脑需要在执行时间处于开机和唤醒状态。
+
+## 项目结构
+
+```text
+asti-media-demo/
+├── app.py
+├── config/
+│   ├── pilot_prompts.csv
+│   └── topic_strategy.csv
+├── database/
+│   └── real_monitor.db
+├── engine/
+│   ├── config.py
+│   ├── content_audit.py
+│   ├── deep_assessment.py
+│   ├── gt_corpus.py
+│   ├── prompt_research.py
+│   ├── real_collector.py
+│   ├── real_store.py
+│   ├── topic_playbook.py
+│   └── topic_strategy.py
+├── scripts/
+│   ├── collect_daily.sh
+│   ├── install_daily_schedule.sh
+│   └── uninstall_daily_schedule.sh
+├── requirements.txt
+└── REAL_DATA.md
+```
+
+## 口径限制
+
+- 结果只代表本报告所用 ChatGPT 采集环境、固定问题和采集时间下观察到的联网回答。
+- 不同 AI 产品、账号、位置和会话可能返回不同结果。
+- 被访问限制、网络失败、PDF 和无可提取正文的 URL 不进入评分。
+- Claim-level 核验只判断引用文章对回答的支持关系，不替代独立事实核查。
+- Streamlit Community Cloud 本地磁盘不适合作为长期 SQLite 任务存储；持续监测建议在固定电脑或服务器运行。
