@@ -1,11 +1,11 @@
-name: Daily ASTI monitoring
+name: ASTI monitoring (manual)
 
 on:
   # Automatic API collection is paused. Run manually only when a new report is needed.
   workflow_dispatch:
 
 concurrency:
-  group: daily-asti-monitor
+  group: manual-asti-monitor
   cancel-in-progress: false
 
 permissions:
