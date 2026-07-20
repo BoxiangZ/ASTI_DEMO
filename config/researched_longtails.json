@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-07-19T04:17:32+00:00",
+  "generated_at": "2026-07-20T04:31:00+00:00",
   "model": "openai/gpt-5.4-mini",
   "recent_days": 21,
   "method": "full-text candidate research + model event synthesis",
   "topics": {
     "China Economy": [
       {
-        "question": "How did China’s foreign trade manage to hit a record 25.47 trillion yuan in the first half of 2026, and which sectors or partners drove the strongest gains—especially the 22.1% jump in imports and the rebound in trade with the United States?",
-        "core_fact": "Official customs data showed China’s H1 2026 foreign trade reached 25.47 trillion yuan, up 16.9% year on year; imports rose 22.1%, and China-US goods trade totaled 2 trillion yuan with Q2 rebounding to 13.7% growth after a Q1 slump.",
-        "intelligence_value": "High — combines headline trade performance with sector/partner mix and reveals policy-relevant external demand and import dynamics.",
+        "question": "What measurable trade and import shifts drove China’s foreign trade to 25.47 trillion yuan in the first half of 2026, and which sectors or markets contributed most to the 16.9% growth?",
+        "core_fact": "China’s foreign trade reached 25.47 trillion yuan in H1 2026, up 16.9% year on year, with imports rising 22.1%, according to customs data.",
+        "intelligence_value": "High: newly released national customs data with a strong policy and macroeconomic signal, including the fastest-moving component (imports) and scale record.",
         "seed_article_title": "China's foreign trade grows 16.9% in H1 2026 to surpass 25 trillion yuan; imports surge 22.1%",
         "seed_article_url": "https://www.globaltimes.cn/page/202607/1365880.shtml",
         "seed_published_at": "2026-07-14T10:28:00",
@@ -21,22 +21,9 @@
         "generation_method": "researched_event_synthesis"
       },
       {
-        "question": "What is behind the surge in China’s sports equipment exports in H1 2026, and how much of the 67.53 billion yuan total was concentrated in balls as World Cup-related demand lifted orders?",
-        "core_fact": "GAC said China’s exports of sports goods and equipment reached 67.53 billion yuan in the first half of 2026, including 3.08 billion yuan in balls, with the World Cup cited as a major demand driver.",
-        "intelligence_value": "Medium-high — gives a concrete sector spike tied to a global event and indicates which product category benefited most.",
-        "seed_article_title": "China’s export of sports equipment hits 67.53 billion yuan in first 6 months of 2026 as World Cup sparks a surge in global demand",
-        "seed_article_url": "https://www.globaltimes.cn/page/202607/1365890.shtml",
-        "seed_published_at": "2026-07-14T11:52:00",
-        "supporting_article_urls": [
-          "https://www.globaltimes.cn/page/202607/1365890.shtml"
-        ],
-        "cluster_size": 1,
-        "generation_method": "researched_event_synthesis"
-      },
-      {
-        "question": "What measurable impact did China’s expanded visa-free policies have on inbound travel in the first half of 2026, and how do the record 369 million cross-border trips and 12.3 million foreign rail passengers compare with earlier periods?",
-        "core_fact": "China processed a record 369 million cross-border trips in H1 2026, up 10.8%, while railways handled 12.3 million foreign passengers, up 33.6%, with officials attributing the growth to visa-free policy expansion.",
-        "intelligence_value": "High — official mobility data shows policy effects on tourism and transport, with strong first-hand indicators of inbound demand.",
+        "question": "How are visa-free policy expansions translating into actual inbound travel volumes, and what does the first-half surge in cross-border trips and rail passenger flows suggest about China’s tourism recovery?",
+        "core_fact": "China processed 369 million cross-border trips in H1 2026, up 10.8%, while railways handled 12.3 million foreign passengers, up 33.6%, with officials attributing the growth to visa-free policies.",
+        "intelligence_value": "High: directly measures policy effectiveness using official mobility data and shows sector-level transmission into transport and tourism.",
         "seed_article_title": "China sets new record with 369m cross-border trips in H1, up 10.8% y-o-y",
         "seed_article_url": "https://www.globaltimes.cn/page/202607/1365613.shtml",
         "seed_published_at": "2026-07-10T11:41:00",
@@ -49,87 +36,97 @@
         "generation_method": "researched_event_synthesis"
       },
       {
-        "question": "How significant is China’s new national supercomputing internet core node going online with capacity for more than 100,000 AI computing cards, and what does that imply for domestic AI infrastructure supply?",
-        "core_fact": "A core node of China’s national supercomputing internet was announced online in Zhengzhou, and it is reportedly capable of providing more than 100,000 AI computing cards, making it the largest single domestic AI computing power resource pool since the network launch.",
-        "intelligence_value": "High — first-hand infrastructure deployment with scale metrics that can signal AI compute availability and industrial capacity.",
-        "seed_article_title": "China's national supercomputing internet 'core node' goes online, offering over 100,000 AI computing cards",
-        "seed_article_url": "https://www.globaltimes.cn/page/202607/1365532.shtml",
-        "seed_published_at": "2026-07-09T11:41:00",
+        "question": "What is behind the sharp expansion in China’s NEV industry and export momentum in the first half of 2026, and how large is the gap between production, domestic sales, and overseas demand?",
+        "core_fact": "China’s NEV production reached 7.44 million units and sales also topped 7 million in H1 2026, while NEV exports rose 1.2-fold year on year.",
+        "intelligence_value": "High: timely industrial data with export acceleration, useful for gauging manufacturing strength and external demand.",
+        "seed_article_title": "China's NEV production, sales both surpass 7 million units in first half of 2026: industry association",
+        "seed_article_url": "https://www.globaltimes.cn/page/202607/1365549.shtml",
+        "seed_published_at": "2026-07-09T17:06:00",
         "supporting_article_urls": [
-          "https://www.globaltimes.cn/page/202607/1365532.shtml",
-          "https://www.globaltimes.cn/page/202607/1365377.shtml",
-          "https://www.globaltimes.cn/page/202607/1365736.shtml"
+          "https://www.globaltimes.cn/page/202607/1365549.shtml",
+          "https://www.globaltimes.cn/page/202607/1366314.shtml",
+          "https://www.globaltimes.cn/page/202607/1365880.shtml"
         ],
         "cluster_size": 3,
+        "generation_method": "researched_event_synthesis"
+      },
+      {
+        "question": "How significant is the latest official drop in rare-earth exports, and does it point to changing external demand, export controls, or supply-chain repositioning?",
+        "core_fact": "China exported 30,482.8 tons of rare earths in H1 2026, down 6.4% from a year earlier, with June exports at 5,104.8 tons.",
+        "intelligence_value": "Medium-high: concrete customs data on a strategically sensitive sector with potential implications for global supply chains and trade policy.",
+        "seed_article_title": "China’s rare-earth exports drop to 30,482.8 tons in H1: customs data",
+        "seed_article_url": "https://www.globaltimes.cn/page/202607/1365894.shtml",
+        "seed_published_at": "2026-07-14T13:04:00",
+        "supporting_article_urls": [
+          "https://www.globaltimes.cn/page/202607/1365894.shtml",
+          "https://www.globaltimes.cn/page/202607/1365880.shtml"
+        ],
+        "cluster_size": 2,
         "generation_method": "researched_event_synthesis"
       }
     ],
     "China Technology/AI": [
       {
-        "question": "What new capability did Unitree’s G1 humanoid robot demonstrate in the first reported live-pig laparoscopic surgery, and what were the practical limits of teleoperation in that test?",
-        "core_fact": "A US research team used Unitree’s G1 humanoid robot to carry out complete laparoscopic cholecystectomies on two live pigs, teleoperating it to manipulate manual laparoscopic instruments in what was described as the world’s first humanoid robot surgical system to perform a full minimally invasive procedure.",
-        "intelligence_value": "High: first-hand evidence of a real surgical use case for a named Chinese humanoid robot, including task type, animal test conditions, and operational constraints.",
-        "seed_article_title": "US team uses Chinese humanoid robot for world-first live pig surgery",
-        "seed_article_url": "https://www.globaltimes.cn/page/202607/1365722.shtml",
-        "seed_published_at": "2026-07-12T16:02:00",
+        "question": "What does China’s first domestically developed 100,000-card AI supercluster enable in practice, and how does it compare with other major domestic computing pools now coming online?",
+        "core_fact": "Sugon 8000 (Dengfeng) is described as China’s first domestically developed 100,000-card AI supercluster, and the national supercomputing internet core node was also announced to provide more than 100,000 AI computing cards, indicating a major expansion of domestic AI compute capacity.",
+        "intelligence_value": "High—captures concrete infrastructure scale, first-deployment status, and the practical AI compute bottleneck that shapes model training and deployment.",
+        "seed_article_title": "Sugon 8000 helps advance China’s AI infrastructure frontier",
+        "seed_article_url": "https://www.globaltimes.cn/page/202607/1365919.shtml",
+        "seed_published_at": "2026-07-14T20:04:00",
         "supporting_article_urls": [
-          "https://www.globaltimes.cn/page/202607/1365722.shtml",
-          "https://www.globaltimes.cn/page/202607/1366238.shtml"
+          "https://www.globaltimes.cn/page/202607/1365919.shtml",
+          "https://www.globaltimes.cn/page/202607/1365532.shtml"
         ],
         "cluster_size": 2,
         "generation_method": "researched_event_synthesis"
       },
       {
-        "question": "How significant is China’s first domestically developed 100,000-card AI supercluster, and what does the new national supercomputing internet core node actually enable in practice?",
-        "core_fact": "China’s national supercomputing internet core node came online in Zhengzhou and was reported to provide more than 100,000 AI computing cards, making it the largest single domestic AI computing power resource pool since the launch of the national supercomputing internet; Sugon 8000 was also described as China’s first domestically developed 100,000-card AI supercluster.",
-        "intelligence_value": "High: concrete infrastructure scale, named systems, and a clear indicator of domestic AI compute capacity expansion.",
-        "seed_article_title": "China's national supercomputing internet 'core node' goes online, offering over 100,000 AI computing cards",
-        "seed_article_url": "https://www.globaltimes.cn/page/202607/1365532.shtml",
-        "seed_published_at": "2026-07-09T11:41:00",
+        "question": "How capable is Moonshot AI’s Kimi K3 in real use, and what does its 2.8 trillion-parameter design and open-source approach suggest about the current limits of Chinese frontier models?",
+        "core_fact": "Kimi K3 is a 2.8 trillion-parameter LLM from Moonshot AI that drew attention for its scale, efficiency gains, and open-source approach, highlighting Chinese AI firms’ move toward competing on capability rather than only cost.",
+        "intelligence_value": "High—named model, specific parameter count, and strategic significance for China’s frontier-model competitiveness and efficiency limits.",
+        "seed_article_title": "Moonshot’s Kimi K3 shows China AI’s rise through innovation, efficiency and open ecosystem",
+        "seed_article_url": "https://www.globaltimes.cn/page/202607/1366312.shtml",
+        "seed_published_at": "2026-07-19T19:40:00",
         "supporting_article_urls": [
-          "https://www.globaltimes.cn/page/202607/1365532.shtml",
-          "https://www.globaltimes.cn/page/202607/1365919.shtml",
-          "https://www.globaltimes.cn/page/202607/1365736.shtml"
+          "https://www.globaltimes.cn/page/202607/1366312.shtml",
+          "https://www.globaltimes.cn/page/202607/1366319.shtml"
         ],
-        "cluster_size": 3,
+        "cluster_size": 2,
         "generation_method": "researched_event_synthesis"
       },
       {
-        "question": "What makes Moonshot AI’s Kimi K3 notable compared with other open models, and what benchmark or deployment claims were attached to its launch?",
-        "core_fact": "Moonshot AI released Kimi K3 as a 2.8-trillion-parameter open-source model and described it as the world’s largest open-source model by parameter scale, with WAIC coverage highlighting it as part of China’s rising AI capabilities.",
-        "intelligence_value": "High: named frontier model, explicit parameter count, and a first-appearance style launch that can be tracked for capability and competitive positioning.",
-        "seed_article_title": "Moonshot AI releases ‘world’s largest open-source model’ Kimi K3; WAIC spotlights Chinese AI capabilities",
-        "seed_article_url": "https://www.globaltimes.cn/page/202607/1366194.shtml",
-        "seed_published_at": "2026-07-17T15:57:00",
+        "question": "What concrete tasks did the Unitree G1 humanoid robot complete in the live-pig surgery experiment, and what are the real technical constraints of teleoperated humanoid surgery?",
+        "core_fact": "A US research team used Unitree G1 humanoid robots to perform standard laparoscopic cholecystectomies on two live pigs, teleoperating the robot to manipulate manual laparoscopic instruments in what was described as the world’s first complete minimally invasive surgical use of a humanoid robot system.",
+        "intelligence_value": "High—first-hand experimental result with a named robot model and a clear capability boundary relevant to robotics and medical autonomy.",
+        "seed_article_title": "US team uses Chinese humanoid robot for world-first live pig surgery",
+        "seed_article_url": "https://www.globaltimes.cn/page/202607/1365722.shtml",
+        "seed_published_at": "2026-07-12T16:02:00",
         "supporting_article_urls": [
-          "https://www.globaltimes.cn/page/202607/1366194.shtml",
-          "https://www.globaltimes.cn/page/202607/1366139.shtml",
-          "https://www.globaltimes.cn/page/202607/1366204.shtml"
+          "https://www.globaltimes.cn/page/202607/1365722.shtml"
         ],
-        "cluster_size": 3,
+        "cluster_size": 1,
         "generation_method": "researched_event_synthesis"
       },
       {
-        "question": "Which Chinese AI or robotics products were set for first public debut at WAIC, and what does the conference reveal about where Chinese vendors think their most exportable capabilities are?",
-        "core_fact": "At WAIC, more than 300 AI products were set to make global debuts; among the highlighted products was Quester1, a shape-shifting personal robot that can switch between wheeled bipedal and quadrupedal forms, while humanoid robot makers said they were preparing for overseas expansion as the sector gains strength in key parts of the value chain.",
-        "intelligence_value": "Medium-high: identifies first-public-showing products and links them to industrial strategy and export intent, useful for tracking commercialization priorities.",
+        "question": "Why is the Quester1 shape-shifting robot notable, and what practical mobility or deployment advantages come from its ability to switch between wheeled bipedal and quadrupedal modes?",
+        "core_fact": "Quester1 is a Chinese personal robot set to debut at WAIC that can automatically switch between wheeled bipedal and quadrupedal forms, positioning it as a transformable platform rather than a fixed-mobility robot.",
+        "intelligence_value": "Medium-high—named product, first debut, and a concrete mobility feature that hints at use-case and engineering tradeoffs.",
         "seed_article_title": "China to debut ‘transformer-like’ shape-shifting robot at WAIC",
         "seed_article_url": "https://www.globaltimes.cn/page/202607/1365826.shtml",
         "seed_published_at": "2026-07-13T20:50:00",
         "supporting_article_urls": [
           "https://www.globaltimes.cn/page/202607/1365826.shtml",
-          "https://www.globaltimes.cn/page/202607/1366139.shtml",
-          "https://www.globaltimes.cn/page/202607/1366238.shtml"
+          "https://www.globaltimes.cn/page/202607/1366139.shtml"
         ],
-        "cluster_size": 3,
+        "cluster_size": 2,
         "generation_method": "researched_event_synthesis"
       }
     ],
     "China Diplomacy": [
       {
-        "question": "How did China and Russia carry out the latest joint fish stock enhancement in Heilongjiang, and what species and scale were involved in the release?",
-        "core_fact": "China and Russia held a joint fish stock enhancement and release activity in Tongjiang, Heilongjiang, releasing nearly 5.7 million fish fry, including 480,000 Heilongjiang sturgeon and kaluga.",
-        "intelligence_value": "High-value evidence of concrete China-Russia borderland cooperation with specific scale, species, and location, showing practical diplomacy beyond statements.",
+        "question": "How did China and Russia structure their joint fish stock enhancement effort in Heilongjiang, and what does the release of nearly 5.7 million fry signal about their practical border-region cooperation?",
+        "core_fact": "China and Russia held a joint fish stock enhancement and release activity in Tongjiang, Heilongjiang, releasing nearly 5.7 million fish fry including 480,000 Heilongjiang sturgeon and kaluga.",
+        "intelligence_value": "High-value because it captures a concrete bilateral joint action with specific quantities and species, useful for tracking China-Russia practical cooperation beyond rhetoric.",
         "seed_article_title": "China, Russia deepen fishery conservation cooperation with release of nearly 5.7 million fish fry, including 480,000 Heilongjiang sturgeon and kaluga",
         "seed_article_url": "https://www.globaltimes.cn/page/202607/1365933.shtml",
         "seed_published_at": "2026-07-14T21:28:00",
@@ -141,9 +138,9 @@
         "generation_method": "researched_event_synthesis"
       },
       {
-        "question": "What did Chinese officials say about Thai Prime Minister Anutin Charnvirakul’s first official visit to China, and why is his attendance at the World AI Conference significant?",
-        "core_fact": "Thailand’s prime minister will visit China from July 16 to 20 and attend the 2026 World AI Conference during his first official visit, with China framing the trip as a way to strengthen traditional friendship and practical cooperation.",
-        "intelligence_value": "Captures a first official visit, an announced bilateral agenda, and a multilateral tech-diplomacy hook, useful for monitoring China’s engagement with ASEAN leaders.",
+        "question": "What is the significance of Thailand’s prime minister making his first official visit to China and attending the World AI Conference during the trip?",
+        "core_fact": "Thai Prime Minister Anutin Charnvirakul is scheduled to pay an official visit to China from July 16 to 20 and will attend the 2026 World AI Conference during his first official visit.",
+        "intelligence_value": "High-value because it identifies a concrete high-level visit with an explicit multilateral side event, offering insight into China-Thailand diplomatic prioritization and agenda-setting.",
         "seed_article_title": "Thai Prime Minister to pay official visit to China; Anutin will attend 2026 World AI Conference during first official visit: FM",
         "seed_article_url": "https://www.globaltimes.cn/page/202607/1365831.shtml",
         "seed_published_at": "2026-07-13T21:59:00",
@@ -154,55 +151,57 @@
         "generation_method": "researched_event_synthesis"
       },
       {
-        "question": "How did China respond to the 10th anniversary of the South China Sea arbitration ruling, and what did Beijing demand from countries backing the statement?",
-        "core_fact": "China rejected the so-called South China Sea Arbitration Award, said it does not accept or recognize it, and urged countries supporting the commemoration to stop stirring up trouble and respect China’s sovereignty and maritime rights.",
-        "intelligence_value": "Important for tracking China’s official line on a recurring regional flashpoint and its reaction to coordinated diplomatic messaging by multiple countries.",
-        "seed_article_title": "China rejects joint hype over 'SCS Arbitration Award' 10 years on; Have those countries supporting 'award' voluntarily waived maritime rights, FM asks",
-        "seed_article_url": "https://www.globaltimes.cn/page/202607/1365767.shtml",
-        "seed_published_at": "2026-07-13T00:39:00",
-        "supporting_article_urls": [
-          "https://www.globaltimes.cn/page/202607/1365767.shtml",
-          "https://www.globaltimes.cn/page/202607/1365735.shtml"
-        ],
-        "cluster_size": 2,
-        "generation_method": "researched_event_synthesis"
-      },
-      {
-        "question": "Why did Chinese officials describe the PLA Navy’s submarine-launched strategic missile test as routine, and what advance-notification detail did Beijing emphasize in its response to foreign criticism?",
-        "core_fact": "The Foreign Ministry said the submarine-launched missile test was a routine annual training exercise, not aimed at any country, and that relevant countries were notified in advance in line with international practice.",
-        "intelligence_value": "Provides direct official response to foreign scrutiny of a strategic military activity, including the specific claim of advance notification and non-targeting.",
+        "question": "How has China’s Foreign Ministry justified the PLA Navy’s submarine-launched strategic missile test, and what did it say about advance notification and intended targets?",
+        "core_fact": "China said the PLA Navy submarine-launched strategic missile test was a routine training exercise, not targeted at any specific country or target, and that relevant countries were notified in advance in line with international practice.",
+        "intelligence_value": "High-value because it provides first-hand official messaging on a sensitive military activity that drew external reaction, useful for monitoring crisis-management signaling.",
         "seed_article_title": "Chinese FM says PLA Navy submarine-launched strategic missile test is routine, urges relevant countries not to overinterpret it",
         "seed_article_url": "https://www.globaltimes.cn/page/202607/1365239.shtml",
         "seed_published_at": "2026-07-06T15:47:00",
         "supporting_article_urls": [
           "https://www.globaltimes.cn/page/202607/1365239.shtml",
-          "https://www.globaltimes.cn/page/202607/1365828.shtml",
           "https://www.globaltimes.cn/page/202607/1365589.shtml",
+          "https://www.globaltimes.cn/page/202607/1365828.shtml",
           "https://www.globaltimes.cn/page/202607/1365402.shtml"
         ],
         "cluster_size": 4,
+        "generation_method": "researched_event_synthesis"
+      },
+      {
+        "question": "How did China respond to the 10th anniversary of the South China Sea arbitral ruling, and which countries were named in the joint statement it rejected?",
+        "core_fact": "China’s Foreign Ministry said it does not accept or recognize the South China Sea arbitral ruling and that China’s sovereignty and maritime rights are not affected, responding to a joint statement by the US, Australia, the UK, Japan and the Philippines.",
+        "intelligence_value": "High-value because it reflects a repeated diplomatic theme with direct official rebuttal and named countries, useful for tracking coalition responses and China’s counter-position.",
+        "seed_article_title": "China rejects joint hype over South China Sea Arbitral Award 10 years after, urges relevant countries to stop stirring up trouble",
+        "seed_article_url": "https://www.globaltimes.cn/page/202607/1365735.shtml",
+        "seed_published_at": "2026-07-12T19:37:00",
+        "supporting_article_urls": [
+          "https://www.globaltimes.cn/page/202607/1365735.shtml",
+          "https://www.globaltimes.cn/page/202607/1365767.shtml"
+        ],
+        "cluster_size": 2,
         "generation_method": "researched_event_synthesis"
       }
     ],
     "China Military": [
       {
-        "question": "What does the latest Joint Sea-2026 port visit and ship-to-ship exchange between the Type 052D destroyer Kaifeng and Russia’s Varyag reveal about how China and Russia are practicing interoperability at sea?",
-        "core_fact": "Chinese and Russian warships, including the Type 052D destroyer Kaifeng and Russia's Varyag, conducted reciprocal visits in Qingdao during Joint Sea-2026, indicating visible bilateral naval cooperation and exercise coordination.",
-        "intelligence_value": "High-value indicator of China-Russia naval alignment, with a named destroyer and real-world exercise activity that can help assess interoperability and readiness.",
-        "seed_article_title": "'Chinese Aegis' Type 052D destroyer Kaifeng meets Russia's 'carrier killer' Varyag as crews exchange visits during Joint Sea-2026 naval exercise",
-        "seed_article_url": "https://www.globaltimes.cn/page/202607/1365501.shtml",
-        "seed_published_at": "2026-07-08T23:25:00",
+        "question": "What does the first publicly reported submarine-launched strategic missile test in 2026 reveal about the maturity and readiness of China’s nuclear triad, and what details were disclosed about the launch platform, timing, and impact area?",
+        "core_fact": "The PLA Navy conducted a successful test launch of a submarine-launched strategic missile from a strategic nuclear submarine on July 6, 2026, firing a training dummy warhead into a designated sea area in the Pacific after advance notification to relevant countries.",
+        "intelligence_value": "High-value indicator of strategic deterrent readiness, operational credibility of the submarine-based leg, and transparency signaling around a sensitive weapons test.",
+        "seed_article_title": "Chinese navy conducts test launch of strategic missile by submarine; not aimed at any specific country, target",
+        "seed_article_url": "https://www.globaltimes.cn/page/202607/1365233.shtml",
+        "seed_published_at": "2026-07-06T13:40:00",
         "supporting_article_urls": [
-          "https://www.globaltimes.cn/page/202607/1365501.shtml",
-          "https://www.globaltimes.cn/page/202606/1364646.shtml"
+          "https://www.globaltimes.cn/page/202607/1365233.shtml",
+          "https://www.globaltimes.cn/page/202607/1365253.shtml",
+          "https://www.globaltimes.cn/page/202607/1365379.shtml",
+          "https://www.globaltimes.cn/page/202607/1365984.shtml"
         ],
-        "cluster_size": 2,
+        "cluster_size": 4,
         "generation_method": "researched_event_synthesis"
       },
       {
-        "question": "Why is the appearance of the Y-9 anti-submarine patrol aircraft in a live submarine search-and-attack drill significant after its earlier parade debut?",
-        "core_fact": "A Y-9 anti-submarine patrol aircraft, first shown publicly during the 2025 V-Day military parade, has now been observed taking part in actual summer 2026 naval aviation exercises in the South China Sea.",
-        "intelligence_value": "Strong signal of a newly revealed or newly operationalized platform moving from ceremonial debut to real training, useful for tracking anti-submarine warfare capability and fielding status.",
+        "question": "Why is the Y-9 anti-submarine patrol aircraft’s appearance in a live summer exercise significant after its debut in the 2025 parade, and what new anti-submarine role or capability does its exercise use suggest?",
+        "core_fact": "A Y-9 anti-submarine patrol aircraft, first shown in the 2025 V-Day military parade, has now been seen in submarine search-and-attack training with a naval aviation unit in the Southern Theater Command.",
+        "intelligence_value": "Useful for tracking whether parade-revealed equipment has transitioned into operational training, indicating fielding progress and anti-submarine warfare capability growth.",
         "seed_article_title": "Y-9 anti-submarine aircraft debuts with upgrades in S.China Sea exercise following 2025 military parade display",
         "seed_article_url": "https://www.globaltimes.cn/page/202607/1366128.shtml",
         "seed_published_at": "2026-07-16T20:24:00",
@@ -213,41 +212,37 @@
         "generation_method": "researched_event_synthesis"
       },
       {
-        "question": "What does the PLA Navy’s submarine-launched strategic missile test tell us about the maturity of China’s sea-based nuclear deterrent and launch procedures?",
-        "core_fact": "The PLA Navy successfully carried out a submarine-launched strategic missile test from a strategic nuclear submarine, with advance notification to relevant countries and reports that the missile landed in the designated sea area.",
-        "intelligence_value": "Very high intelligence value because it involves a named strategic test, observable launch timing, advance notice, and implications for the nuclear triad and operational readiness.",
-        "seed_article_title": "Chinese navy conducts test launch of strategic missile by submarine; not aimed at any specific country, target",
-        "seed_article_url": "https://www.globaltimes.cn/page/202607/1365233.shtml",
-        "seed_published_at": "2026-07-06T13:40:00",
+        "question": "How does Joint Sea-2026 demonstrate China-Russia naval interoperability at the ship level, and what does the side-by-side presence of Kaifeng and Russia’s Varyag suggest about command-and-control familiarity and readiness?",
+        "core_fact": "During the Joint Sea-2026 exercise in Qingdao, Chinese and Russian warships including the Type 052D destroyer Kaifeng and the Russian cruiser Varyag were moored together and crews conducted reciprocal ship visits.",
+        "intelligence_value": "Moderate-to-high value as an observable indicator of bilateral naval cooperation, crew-level interaction, and visible readiness signaling during a live exercise.",
+        "seed_article_title": "'Chinese Aegis' Type 052D destroyer Kaifeng meets Russia's 'carrier killer' Varyag as crews exchange visits during Joint Sea-2026 naval exercise",
+        "seed_article_url": "https://www.globaltimes.cn/page/202607/1365501.shtml",
+        "seed_published_at": "2026-07-08T23:25:00",
         "supporting_article_urls": [
-          "https://www.globaltimes.cn/page/202607/1365233.shtml",
-          "https://www.globaltimes.cn/page/202607/1365253.shtml",
-          "https://www.globaltimes.cn/page/202607/1365379.shtml",
-          "https://www.globaltimes.cn/page/202607/1365239.shtml"
+          "https://www.globaltimes.cn/page/202607/1365501.shtml"
         ],
-        "cluster_size": 4,
+        "cluster_size": 1,
         "generation_method": "researched_event_synthesis"
       },
       {
-        "question": "How does the 11th China-Russia joint strategic air patrol show the structure and combat readiness of mixed bomber-fighter-electronic warfare deployments?",
-        "core_fact": "The 11th China-Russia joint strategic air patrol included systematic deployment integrating bombers, fighter escorts, and electronic warfare aircraft, which Chinese military commentary said reflected high combat readiness.",
-        "intelligence_value": "High-value operational indicator because it points to a recurring bilateral air activity with named mission structure and explicit readiness implications.",
+        "question": "What does the 11th China-Russia joint strategic air patrol indicate about the scale and composition of China’s long-range air operations, especially given claims of systematic deployment and high combat readiness?",
+        "core_fact": "The 11th joint strategic air patrol over the Sea of Japan involved China-Russia bomber and escort aircraft and was described as showing systematic deployment and high combat readiness.",
+        "intelligence_value": "Valuable for assessing repeated long-range patrol patterns, force package composition, and operational maturity in China-Russia air coordination.",
         "seed_article_title": "China, Russia conduct 11th joint strategic air patrol; expert says drill shows systematic deployment and high combat readiness",
         "seed_article_url": "https://www.globaltimes.cn/page/202606/1364646.shtml",
         "seed_published_at": "2026-06-29T00:14:00",
         "supporting_article_urls": [
-          "https://www.globaltimes.cn/page/202606/1364646.shtml",
-          "https://www.globaltimes.cn/page/202607/1365369.shtml"
+          "https://www.globaltimes.cn/page/202606/1364646.shtml"
         ],
-        "cluster_size": 2,
+        "cluster_size": 1,
         "generation_method": "researched_event_synthesis"
       }
     ],
     "US-China Relations": [
       {
-        "question": "How significant is the rebound in China-U.S. goods trade in Q2 after the sharp Q1 slump, and what does it suggest about the durability of current tariff or trade restrictions?",
-        "core_fact": "China-U.S. goods trade reached 2 trillion yuan in H1, with Q2 growth rebounding to 13.7% after an 18.7% decline in Q1, according to customs data.",
-        "intelligence_value": "High: provides a measurable trade indicator that can be used to assess whether bilateral commerce is stabilizing despite policy friction.",
+        "question": "How did China-US goods trade rebound in the second quarter, and what does the 13.7% growth after a first-quarter slump indicate about the trade relationship in 2026?",
+        "core_fact": "China-US goods trade reached 2 trillion yuan in H1 2026; Q2 growth rebounded to 13.7% after an 18.7% decline in Q1.",
+        "intelligence_value": "Measures the scale and volatility of bilateral trade with a concrete quarterly turnaround, useful for tracking tariff or policy effects.",
         "seed_article_title": "China-US goods trade hits 2 trillion yuan in H1, Q2 grows 13.7%",
         "seed_article_url": "https://www.globaltimes.cn/page/202607/1365892.shtml",
         "seed_published_at": "2026-07-14T11:58:00",
@@ -258,9 +253,9 @@
         "generation_method": "researched_event_synthesis"
       },
       {
-        "question": "What explains the first recorded shift in nearly 20 years of global opinion tracking showing China viewed more favorably than the United States, and how much is linked to U.S. 'America First' policies versus China's governance role?",
-        "core_fact": "A Pew poll found China now viewed more positively than the U.S. in many countries, marking the first such shift in nearly 20 years of Pew's global tracking, with experts citing Washington's 'America First' policies and China's growing role in global governance.",
-        "intelligence_value": "Medium-high: useful for gauging soft-power trends that can affect diplomatic leverage and coalition-building in China-U.S. competition.",
+        "question": "What does the latest global polling suggest about shifts in foreign public opinion toward China versus the United States, and how significant is this reversal after nearly two decades of tracking?",
+        "core_fact": "A Pew poll found China is now viewed more positively than the US in many countries, reportedly the first such shift in nearly 20 years of Pew's global opinion tracking.",
+        "intelligence_value": "Provides a cross-country perception indicator tied to US-China competition and global governance narratives, with long-run comparative value.",
         "seed_article_title": "Pew poll finds China viewed more favorably than US; shift accelerated by Washington's 'America First' policies and Beijing's growing role in global governance: experts",
         "seed_article_url": "https://www.globaltimes.cn/page/202607/1366122.shtml",
         "seed_published_at": "2026-07-16T20:09:00",
@@ -271,9 +266,9 @@
         "generation_method": "researched_event_synthesis"
       },
       {
-        "question": "Why does the Taiwan issue remain the most likely trigger for major instability in China-U.S. ties even after the May 14 summit consensus on 'constructive' strategic stability?",
-        "core_fact": "An opinion piece argued that Taiwan could have far-reaching implications for China-U.S. relations, despite the two sides reaching a May 14 consensus on building a 'constructive China-US relationship of strategic stability.'",
-        "intelligence_value": "Medium: captures a recurring strategic theme with direct relevance to escalation risk and policy signaling, though it is opinion-based rather than an original report.",
+        "question": "Why is the Taiwan issue seen as potentially decisive for the stability of China-US relations, and what does that imply for the limits of competition between the two sides?",
+        "core_fact": "The material argues Taiwan could have far-reaching implications for China-US relations and that keeping competition within an appropriate range and differences within controllable boundaries is vital for global stability.",
+        "intelligence_value": "Captures a recurring strategic fault line in bilateral relations, useful for monitoring escalation risk and policy red lines.",
         "seed_article_title": "Why the Taiwan question could have far-reaching implications for China-US relations: Hai Feng",
         "seed_article_url": "https://www.globaltimes.cn/page/202607/1365446.shtml",
         "seed_published_at": "2026-07-08T14:30:00",
@@ -286,52 +281,9 @@
     ],
     "Taiwan Strait": [
       {
-        "question": "What does Taiwan's reported first use of drones in the Penghu Exercises reveal about the island's current unmanned warfare priorities and training focus?",
-        "core_fact": "Taiwan media reported that the island's military deployed drones for the first time in the Penghu Exercises, indicating a new emphasis on unmanned systems in drills.",
-        "intelligence_value": "High: first-deployment detail in a named exercise offers direct insight into evolving Taiwan military tactics and drone integration.",
-        "seed_article_title": "From drones carrying people amid mainland floods to ‘First Year of Taiwan Poison’ – The stark contrast between two paths is immediately apparent: Hai Feng",
-        "seed_article_url": "https://www.globaltimes.cn/page/202607/1366013.shtml",
-        "seed_published_at": "2026-07-15T19:03:00",
-        "supporting_article_urls": [
-          "https://www.globaltimes.cn/page/202607/1366013.shtml",
-          "https://www.globaltimes.cn/page/202607/1366130.shtml",
-          "https://www.globaltimes.cn/page/202607/1365194.shtml"
-        ],
-        "cluster_size": 3,
-        "generation_method": "researched_event_synthesis"
-      },
-      {
-        "question": "How significant is the reported US-Taiwan drone cooperation plan involving the Chien Feng I attack drone and purchases of unmanned surface and underwater vessels?",
-        "core_fact": "Reports say Taiwan and the US agreed to jointly produce the Chien Feng I attack drone and that Taiwan also plans to buy dozens of US-tech unmanned surface vessels and unmanned underwater vehicles.",
-        "intelligence_value": "High: named platform, production cooperation, and procurement specifics provide concrete force-development intelligence.",
-        "seed_article_title": "US, Taiwan region reportedly advance drone cooperation; expert says military impact limited, island residents bear cost",
-        "seed_article_url": "https://www.globaltimes.cn/page/202607/1366130.shtml",
-        "seed_published_at": "2026-07-16T20:35:00",
-        "supporting_article_urls": [
-          "https://www.globaltimes.cn/page/202607/1366130.shtml",
-          "https://www.globaltimes.cn/page/202607/1365194.shtml",
-          "https://www.globaltimes.cn/page/202607/1365786.shtml"
-        ],
-        "cluster_size": 3,
-        "generation_method": "researched_event_synthesis"
-      },
-      {
-        "question": "What do routine China Coast Guard patrols east of Taiwan signal about Beijing's approach to maritime pressure and response to external provocations?",
-        "core_fact": "The China Coast Guard continued routine law enforcement patrols in waters east of Taiwan Island, described as a response to external forces and rising maritime tensions.",
-        "intelligence_value": "Medium-high: recurring patrol activity in a sensitive area helps track pressure patterns and operational presence.",
-        "seed_article_title": "What do routine law enforcement patrols in the waters east of China's Taiwan Island signify?: Hai Feng",
-        "seed_article_url": "https://www.globaltimes.cn/page/202607/1365117.shtml",
-        "seed_published_at": "2026-07-04T18:59:00",
-        "supporting_article_urls": [
-          "https://www.globaltimes.cn/page/202607/1365117.shtml"
-        ],
-        "cluster_size": 1,
-        "generation_method": "researched_event_synthesis"
-      },
-      {
-        "question": "How are cross-Strait civilian exchanges, such as the TPP's first official mainland visit and the Cross-Straits Youth Culture Month, being used to reopen communication channels?",
-        "core_fact": "A Taiwan People's Party delegation began its first official mainland visit in Shanghai, while a youth culture event in Suzhou brought together participants from both sides in a visible people-to-people exchange.",
-        "intelligence_value": "Medium: repeated exchange theme provides insight into current non-military cross-Strait interaction and political signaling.",
+        "question": "What is the significance of the Taiwan People’s Party’s first official mainland visit to Shanghai, and what concrete cross-Strait communication channels could it open if it continues beyond this trip?",
+        "core_fact": "A Taiwan People’s Party delegation began a four-day visit to Shanghai, described as the party’s first official trip to the mainland, amid claims that such exchanges could ease cross-Strait communications and create a more peaceful atmosphere.",
+        "intelligence_value": "High value because it captures a first-of-its-kind political exchange with potential implications for cross-Strait contact and party-level signaling.",
         "seed_article_title": "TPP delegation kicks off maiden mainland visit; trip poised to facilitate cross-Straits communications: expert",
         "seed_article_url": "https://www.globaltimes.cn/page/202607/1365939.shtml",
         "seed_published_at": "2026-07-14T22:15:00",
@@ -341,26 +293,72 @@
         ],
         "cluster_size": 2,
         "generation_method": "researched_event_synthesis"
+      },
+      {
+        "question": "How important is the reported first drone deployment in the Taiwan military’s Penghu exercises, and what does it suggest about Taipei’s current battlefield priorities?",
+        "core_fact": "Taiwan media reportedly said the island’s military deployed drones for the first time in a joint ‘Penghu Exercises’ drill, highlighting expanding military use of unmanned systems.",
+        "intelligence_value": "High value because it points to a specific first-time deployment in an exercised setting, useful for tracking capability adoption and operational experimentation.",
+        "seed_article_title": "From drones carrying people amid mainland floods to ‘First Year of Taiwan Poison’ – The stark contrast between two paths is immediately apparent: Hai Feng",
+        "seed_article_url": "https://www.globaltimes.cn/page/202607/1366013.shtml",
+        "seed_published_at": "2026-07-15T19:03:00",
+        "supporting_article_urls": [
+          "https://www.globaltimes.cn/page/202607/1366013.shtml",
+          "https://www.globaltimes.cn/page/202607/1366130.shtml",
+          "https://www.globaltimes.cn/page/202607/1365786.shtml"
+        ],
+        "cluster_size": 3,
+        "generation_method": "researched_event_synthesis"
+      },
+      {
+        "question": "What new drone and unmanned-vessel cooperation is reportedly emerging between the US and Taiwan region, and how materially could it change the island’s defense posture?",
+        "core_fact": "Reports said Taiwan and the US agreed to jointly produce the attack drone Chien Feng I (Mighty Hornet I), and Taiwan may also buy dozens of unmanned surface vessels and unmanned underwater vehicles using US technology.",
+        "intelligence_value": "High value because it involves named systems, reported co-production, and a shift toward unmanned maritime and strike capabilities with direct military implications.",
+        "seed_article_title": "US, Taiwan region reportedly advance drone cooperation; expert says military impact limited, island residents bear cost",
+        "seed_article_url": "https://www.globaltimes.cn/page/202607/1366130.shtml",
+        "seed_published_at": "2026-07-16T20:35:00",
+        "supporting_article_urls": [
+          "https://www.globaltimes.cn/page/202607/1366130.shtml",
+          "https://www.globaltimes.cn/page/202607/1366013.shtml",
+          "https://www.globaltimes.cn/page/202607/1365786.shtml",
+          "https://www.globaltimes.cn/page/202607/1365194.shtml"
+        ],
+        "cluster_size": 4,
+        "generation_method": "researched_event_synthesis"
+      },
+      {
+        "question": "Why are routine law-enforcement patrols east of Taiwan Island drawing attention now, and do they signal a sustained change in patrol patterns or rules of engagement?",
+        "core_fact": "The China Coast Guard continued routine law-enforcement patrols in waters east of Taiwan Island, framed as a response to external provocations and rising maritime tensions.",
+        "intelligence_value": "Moderate-high value because it concerns recurring patrol activity in a sensitive area and its potential signaling effect on maritime control and escalation management.",
+        "seed_article_title": "What do routine law enforcement patrols in the waters east of China's Taiwan Island signify?: Hai Feng",
+        "seed_article_url": "https://www.globaltimes.cn/page/202607/1365117.shtml",
+        "seed_published_at": "2026-07-04T18:59:00",
+        "supporting_article_urls": [
+          "https://www.globaltimes.cn/page/202607/1365117.shtml"
+        ],
+        "cluster_size": 1,
+        "generation_method": "researched_event_synthesis"
       }
     ],
     "South China Sea": [
       {
-        "question": "How have Chinese radio-amateur records and DX-peditions been used as evidence of international recognition of Chinese sovereignty over Huangyan Dao, and what concrete contacts were logged over the years?",
-        "core_fact": "A Chinese radio veteran says one letter, four DX-peditions, and about 60,000 radio contacts are being cited to show an international consensus supporting China's sovereignty over Huangyan Dao; the article highlights a 1990 response from the Philippine mapping authority stating Scarborough Reef/Huangyan Dao did not fall under Philippine territorial sovereignty.",
-        "intelligence_value": "High: combines named legal/administrative evidence with large-scale field activity and a specific historical document tied to Huangyan Dao sovereignty claims.",
+        "question": "What concrete evidence is being used to argue that Huangyan Dao is widely seen as Chinese territory, and how is that evidence being documented today?",
+        "core_fact": "A Chinese radio veteran says one letter from the Philippine mapping authority, four DX-peditions, and about 60,000 amateur radio contacts have been compiled as evidence of broad international acknowledgment of China’s sovereignty over Huangyan Dao.",
+        "intelligence_value": "High: combines named legal-administrative evidence, long-running field activity, and a quantified contact record tied to a contested shoal.",
         "seed_article_title": "Exclusive: One letter, four DX-peditions, 60,000 radio contacts: Chinese radio veteran reveals the international consensus on China's sovereignty over Huangyan Dao",
         "seed_article_url": "https://www.globaltimes.cn/page/202607/1365768.shtml",
         "seed_published_at": "2026-07-13T00:48:00",
         "supporting_article_urls": [
-          "https://www.globaltimes.cn/page/202607/1365768.shtml"
+          "https://www.globaltimes.cn/page/202607/1365768.shtml",
+          "https://www.globaltimes.cn/page/202607/1365804.shtml",
+          "https://www.globaltimes.cn/page/202607/1365767.shtml"
         ],
-        "cluster_size": 1,
+        "cluster_size": 3,
         "generation_method": "researched_event_synthesis"
       },
       {
-        "question": "What do the latest drone images and patrol reports show China Coast Guard vessels doing near Huangyan Dao, and why is that operational pattern being emphasized now?",
-        "core_fact": "A July 8, 2026 drone photo shows China Coast Guard vessels patrolling waters near Huangyan Dao; other items in the corpus repeatedly reference aerial/drone imagery of Huangyan Dao and China’s insistence that its sovereignty and maritime rights are unaffected by the 2016 award.",
-        "intelligence_value": "High: observable maritime activity with a named force and location, useful for tracking routine presence and signaling around a disputed feature.",
+        "question": "How are Chinese coast guard patrols around Huangyan Dao being presented as evidence of control, and what do the latest patrol images show?",
+        "core_fact": "A July 8 drone photo shows China Coast Guard vessels patrolling waters near Huangyan Dao, and related reports emphasize Chinese maritime presence around the shoal.",
+        "intelligence_value": "High: observable maritime action with named vessels and a specific location, useful for monitoring presence, tempo, and signaling around a flashpoint.",
         "seed_article_title": "Think tanks' report debunks fallacies of 'SCS arbitration award,' validates China's legitimate position on maritime rights",
         "seed_article_url": "https://www.globaltimes.cn/page/202607/1365804.shtml",
         "seed_published_at": "2026-07-13T15:28:00",
@@ -373,40 +371,43 @@
         "generation_method": "researched_event_synthesis"
       },
       {
-        "question": "How did China respond diplomatically when the US, the Philippines, and several European countries jointly backed the 10-year anniversary of the South China Sea arbitration ruling, and what protest steps were taken?",
-        "core_fact": "China’s Foreign Ministry said it does not accept or recognize the so-called award and lodged strong protests with the heads of diplomatic missions of the countries concerned and the EU delegation; separate representations were also made to Japan over similar remarks and a joint statement.",
-        "intelligence_value": "High: captures coordinated diplomatic countermeasures, named participants, and the scale of the protest response to the anniversary statements.",
+        "question": "What has China done diplomatically in response to the latest anniversary statements backing the 2016 South China Sea ruling, and which countries or institutions were formally protested?",
+        "core_fact": "China’s Foreign Ministry and embassy channels lodged protests against joint statements by the US, the Philippines, several European countries, the EU delegation, Japan, and related remarks by Japan’s foreign minister, rejecting the ruling and defending China’s maritime rights.",
+        "intelligence_value": "High: identifies specific diplomatic targets and protest actions, showing the breadth of coordinated opposition and China’s response pattern.",
         "seed_article_title": "China lodges strong protests with heads of diplomatic missions of certain countries, EU delegation over statements supporting illegal ‘South China Sea arbitration award’",
         "seed_article_url": "https://www.globaltimes.cn/page/202607/1365949.shtml",
         "seed_published_at": "2026-07-14T23:11:00",
         "supporting_article_urls": [
           "https://www.globaltimes.cn/page/202607/1365949.shtml",
+          "https://www.globaltimes.cn/page/202607/1365735.shtml",
           "https://www.globaltimes.cn/page/202607/1365760.shtml",
-          "https://www.globaltimes.cn/page/202607/1365734.shtml",
           "https://www.globaltimes.cn/page/202607/1365815.shtml"
         ],
         "cluster_size": 4,
         "generation_method": "researched_event_synthesis"
       },
       {
-        "question": "What specific official actions were taken after China-Russia announced a joint exercise and maritime patrol, and how is Beijing framing the purpose of that cooperation?",
-        "core_fact": "A Defense Ministry spokesperson said China-Russia military cooperation follows non-alliance, non-confrontation, and not targeting any third party, and that relevant parties should view the recent joint exercise and maritime patrol objectively and rationally.",
-        "intelligence_value": "Medium: captures a named maritime patrol element and Beijing’s framing of its strategic purpose, though the corpus gives fewer concrete operational details.",
-        "seed_article_title": "China urges relevant parties to view China-Russia military co-op objectively, rationally: MND spokesperson on recent joint exercise and maritime patrol",
-        "seed_article_url": "https://www.globaltimes.cn/page/202607/1366193.shtml",
-        "seed_published_at": "2026-07-17T15:52:00",
+        "question": "What new legal or think-tank evidence is being cited to challenge the 2016 South China Sea arbitration, and what does it say about China’s maritime position?",
+        "core_fact": "Chinese think tanks held a roundtable in Hong Kong and released a report critiquing the arbitration award, while multiple opinion and diplomatic pieces argue the ruling is legally flawed and does not affect China’s sovereignty or maritime rights.",
+        "intelligence_value": "Medium-high: useful for tracking the legal narrative, institutional messaging, and recurring arguments used to rebut the award.",
+        "seed_article_title": "Think tanks' report debunks fallacies of 'SCS arbitration award,' validates China's legitimate position on maritime rights",
+        "seed_article_url": "https://www.globaltimes.cn/page/202607/1365804.shtml",
+        "seed_published_at": "2026-07-13T15:28:00",
         "supporting_article_urls": [
-          "https://www.globaltimes.cn/page/202607/1366193.shtml"
+          "https://www.globaltimes.cn/page/202607/1365804.shtml",
+          "https://www.globaltimes.cn/page/202607/1364889.shtml",
+          "https://www.globaltimes.cn/page/202607/1365670.shtml",
+          "https://www.globaltimes.cn/page/202607/1365720.shtml"
         ],
-        "cluster_size": 1,
+        "cluster_size": 4,
         "generation_method": "researched_event_synthesis"
       }
     ],
     "China EV": [
       {
-        "question": "How significant is it that China’s new energy vehicle sector surpassed 7 million units in both output and sales in the first half of 2026, and what does the 67% share of pure electric vehicles suggest about demand trends?",
-        "core_fact": "China’s NEV output and sales both exceeded 7 million units in H1 2026, with output at 7.438 million, sales at 7.446 million, and pure EVs making up 67% of NEV sales.",
-        "intelligence_value": "High: gives concrete sector-scale production and demand data, plus a split that reveals where the market is concentrating.",
+        "question": "Why did China’s new-energy vehicle market cross 7 million units in both output and sales in the first half of 2026, and what does the 67% share of pure EVs say about the market’s direction?",
+        "core_fact": "China’s NEV output reached 7.438 million units and sales reached 7.446 million units in H1 2026, with pure electric vehicles making up 67% of NEV sales.",
+        "intelligence_value": "High: provides current market scale, growth momentum, and technology mix from official industry data.",
         "seed_article_title": "China's new energy vehicle output, sales both exceed 7 mln in H1",
         "seed_article_url": "https://www.globaltimes.cn/page/202607/1365541.shtml",
         "seed_published_at": "2026-07-09T15:20:00",
@@ -417,9 +418,9 @@
         "generation_method": "researched_event_synthesis"
       },
       {
-        "question": "Why are Japan’s top three automakers losing ground in China’s first-half 2026 market, and how much did Toyota, Nissan, and Honda sales decline year on year?",
-        "core_fact": "Toyota, Nissan, and Honda reported first-half 2026 China sales declines of 17.1%, 15%, and 34.7% respectively, with weak new model rollouts cited as a factor.",
-        "intelligence_value": "High: captures a notable competitive shift in the China auto market and links it to product cadence, which is useful for competitive monitoring.",
+        "question": "How sharply did Japan’s top three automakers lose ground in China in H1 2026, and how much of that decline was tied to slower EV and new-model rollouts versus local competition?",
+        "core_fact": "In H1 2026, Toyota’s China sales fell 17.1% to 694,700 units, Nissan’s fell 15% to 237,000, and Honda’s fell 34.7% to 205,800, with slow new-model rollouts cited as a factor.",
+        "intelligence_value": "High: quantifies competitive pressure in China’s EV-driven market and highlights product-cycle weakness among major foreign OEMs.",
         "seed_article_title": "H1 sales of Japan’s top three automakers slump in China, falling behind local EV boom",
         "seed_article_url": "https://www.globaltimes.cn/page/202607/1365750.shtml",
         "seed_published_at": "2026-07-12T22:08:00",
@@ -430,9 +431,9 @@
         "generation_method": "researched_event_synthesis"
       },
       {
-        "question": "What does Xiaomi’s launch of the SkyNomad SUV reveal about the pace of its automotive expansion, given that it is already the company’s third major vehicle line after the SU7 and YU7?",
-        "core_fact": "Xiaomi unveiled its second SUV, the SkyNomad, marking its third major automotive product line in about two years after the SU7 sedan and YU7 SUV.",
-        "intelligence_value": "Medium-high: provides a concrete product-expansion milestone for a fast-moving entrant in China’s EV market.",
+        "question": "What does Xiaomi’s launch of its second SUV, the SkyNomad, reveal about how fast the company is expanding its EV lineup after the SU7 sedan and YU7 SUV?",
+        "core_fact": "Xiaomi officially unveiled the SkyNomad as its second SUV, marking its third major automotive product expansion in about two years after the SU7 and YU7.",
+        "intelligence_value": "Medium: shows rapid product cadence and portfolio expansion from a prominent EV entrant, useful for tracking execution speed.",
         "seed_article_title": "Xiaomi unveils second SUV as rapid product iteration highlights China’s EV industry edge: experts",
         "seed_article_url": "https://www.globaltimes.cn/page/202607/1365598.shtml",
         "seed_published_at": "2026-07-09T23:38:00",
